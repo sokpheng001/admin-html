@@ -10,7 +10,7 @@ require_once '../utils/database_connect.php';
 
         // SQL query to get all students where 'is_deleted' is 0
         $sql = "SELECT uuid, khmer_name, latin_name, father_name, mother_name, date_of_birth, place_of_birth,
-                       original_email, school_email, phone_number, profile, major, gender, expired_date
+                       original_email, school_email, phone_number, profile, major, gender, expired_date, stu_id
                 FROM students WHERE is_deleted = 0";
         
         $result = mysqli_query($database_connection, $sql);
@@ -38,7 +38,9 @@ require_once '../utils/database_connect.php';
 
 // Function to delete a user by stu_id
 function deleteUser($stu_id) {
+
     global $database_connection;
+    
 
     // SQL query to delete user based on stu_id
     $sql = "UPDATE students SET is_deleted = 1 WHERE stu_id = ?";

@@ -17,9 +17,9 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#manage" class="active">គ្រប់គ្រងនិស្សិត</a></li>
-            <li><a href="../index.html#services">សេវាកម្ម</a></li>
-            <li><a href="../index.html#contact">ទំនាក់ទំនង</a></li>
+            <li><a href="/" class="active">គ្រប់គ្រងនិស្សិត</a></li>
+            <li><a style="cursor: pointer;" onclick="deleteTab()">និស្សិតដែលបានលុប</a></li>
+            <li><a style="cursor: pointer;">ទំនាក់ទំនង</a></li>
           </ul>
         </nav>
         <a href="#" class="logout-button">ចាកចេញ</a>
@@ -34,6 +34,7 @@
             <div class="search-bar">
               <input
                 type="text"
+                name="search-input"
                 placeholder="ស្វែងរកនិស្សិត (ឈ្មោះ, លេខសម្គាល់)"
               />
               <button class="search-button">ស្វែងរក</button>
@@ -80,6 +81,7 @@
               </tbody>
             </table>
           </div>
+          <!-- all deleted student -->
         </section>
       </main>
     </div>
@@ -89,13 +91,15 @@
         <span class="close-button" onclick="closeModal()">×</span>
         <p>តើអ្នកពិតជាចង់លុបកំណត់ត្រានេះមែនទេ?</p>
         <div class="modal-actions">
-          <button class="confirm-button" onclick="deleteRecord()">លុប</button>
+          <button class="confirm-button" onclick="startDeleteStudent()">
+            លុប
+          </button>
           <button class="cancel-button" onclick="closeModal()">បោះបង់</button>
         </div>
       </div>
     </div>
-    <!--  -->
-    <script src="./js/buttonClick.js"></script>
-    <script src="./js/fetch-data.js"></script>
+    <!-- -->
+    <script src="/js/fetch-data-and-click-animation.js"></script>
+    <script src="/js/delete-tab.js"></script>
   </body>
 </html>
