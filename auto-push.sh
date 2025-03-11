@@ -1,5 +1,5 @@
 git add .
 echo -n "[+] Enter commit message: "
-read $msg
+read msg
 git commit -m "$msg"
-git push origin master
+git push origin master  
